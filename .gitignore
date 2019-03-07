@@ -1,3 +1,5 @@
 example/client_example/build
 example/server_example/build
+client/build
+server/build
 .vscode

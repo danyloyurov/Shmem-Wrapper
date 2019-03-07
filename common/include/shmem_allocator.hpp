@@ -7,7 +7,7 @@ class ShmemAllocator {
     public:
         static ShmemAllocator& Instance();
 
-        void* GetShmemAddr(const int& size);
+        char* GetShmemAddr(const int& size);
         void DeleteShmemAddr(char* shmem_addr, const int& size);
 
         ShmemAllocator(ShmemAllocator const&) = delete;

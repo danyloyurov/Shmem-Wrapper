@@ -12,8 +12,9 @@ ShmemAllocator& ShmemAllocator::Instance() {
     return object;
 }
 
-void* ShmemAllocator::GetShmemAddr(const int& size) {
-    return mmap(0, size, PROT_READ|PROT_WRITE, MAP_ANONYMOUS|MAP_SHARED, 0, 0);
+char* ShmemAllocator::GetShmemAddr(const int& size) {
+    return reinterpret_cast<char*>(mmap(0, size, PROT_READ | PROT_WRITE,
+                                        MAP_ANONYMOUS | MAP_SHARED, 0, 0));
 }
 
 void ShmemAllocator::DeleteShmemAddr(char* shmem_addr, const int& size) {

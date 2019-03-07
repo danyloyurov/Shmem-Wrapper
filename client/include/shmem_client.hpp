@@ -3,6 +3,7 @@
 
 #include "shmem_data.hpp"
 #include "shmem_mutex.hpp"
+
 #include <queue>
 #include <sys/shm.h>
 
@@ -11,13 +12,11 @@ class ShmemClient {
         ShmemClient(const int& shmem_size);
         ~ShmemClient();
 
-        void RegisterClient();
-        void DispatchQueue();
+        void LoginClient();
         void WriteData(const ShmemData& data);
     private:
         char* shmem_memaddr_;
         int shmem_size_;
-        int shmem_id_;
 
         ShmemMutex write_mutex_;
         std::queue<ShmemData> write_queue_;
