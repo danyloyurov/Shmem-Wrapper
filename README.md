@@ -1,3 +1,1 @@
-# easyIPC
-
-One of thousands shared memory IPC wrappers
+# IPM Broker (inter process message broker)
