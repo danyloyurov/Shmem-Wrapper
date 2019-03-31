@@ -1,5 +1,4 @@
-example/client_example/build
-example/server_example/build
-client/build
-server/build
+core/build
+core/shmem/client_test
+core/shmem/server_test
 .vscode
