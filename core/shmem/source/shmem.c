@@ -43,3 +43,8 @@ void* get_shmem_address(const char* name) {
   close(file_descriptor);
   return shmem_address;
 }
+
+void close_descriptor(const char* name) {
+  shm_unlink(name);
+}
+
