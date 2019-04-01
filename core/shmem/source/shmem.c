@@ -12,11 +12,11 @@ void* create_shmem_address(const char* name, int size) {
   int file_descriptor = 0;
   int error_code = 0;
 
-  file_descriptor = shm_open(name, O_RDWR, O_CREAT);
+  file_descriptor = shm_open(name, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
 
   if(SHM_ERROR == file_descriptor) return shmem_address;
 
-  error_code = ftructate(file_descriptor, size);
+  error_code = ftruncate(file_descriptor, size);
 
   if(SHM_ERROR == error_code) return shmem_address;
 
