@@ -31,7 +31,7 @@ void* get_shmem_address(const char* name) {
   int file_descriptor = 0;
   int error_code = 0;
 
-  file_descriptor = shm_open(name, O_RDWR, NULL);
+  file_descriptor = shm_open(name, O_RDWR | O_CREAT, NULL);
 
   if(SHM_ERROR == file_descriptor) return shmem_address;
 
